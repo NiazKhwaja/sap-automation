@@ -299,7 +299,7 @@ if ($confirmation -ne 'y') {
   Write-Host "Creating $repo_name repository" -ForegroundColor Green
   az repos create --name $repo_name --query id --output none
   $code_repo_id = (az repos list --query "[?name=='$repo_name'].id | [0]" --out tsv)
-  az repos import create --git-url https://github.com/github.com/NiazKhwaja//SAP-automation --repository $code_repo_id --output none
+  az repos import create --git-url https://github.com/NiazKhwaja/SAP-automation --repository $code_repo_id --output none
   az repos update --repository $code_repo_id --default-branch main --output none
 
   $import_code = $true
@@ -307,7 +307,7 @@ if ($confirmation -ne 'y') {
   Write-Host "Creating $repo_name repository" -ForegroundColor Green
   az repos create --name $repo_name --query id --output none
   $sample_repo_id = (az repos list --query "[?name=='$repo_name'].id | [0]" --out tsv)
-  az repos import create --git-url https://github.com/github.com/NiazKhwaja//SAP-automation-samples --repository $sample_repo_id --output none
+  az repos import create --git-url https://github.com/NiazKhwaja/SAP-automation-samples --repository $sample_repo_id --output none
   az repos update --repository $sample_repo_id --default-branch main --output none
 
   if ($ADO_Project -ne "SAP Deployment Automation Framework") {
