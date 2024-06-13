@@ -877,7 +877,7 @@ stages:
 
                   failOnStderr: false
 
-    - stage:                           Web_App_Deployment
+    - stage:                           Web_App_DeploymentPrepare control plane
       pool:                            $(this_agent)
       variables:
           - template:                  variables/01-deploy-control-plane-variables.yaml
